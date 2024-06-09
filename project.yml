@@ -15,9 +15,35 @@ include:
 # Targets
 ###############################
 targets:
-  
+  DependencyInjector:
+    templates:
+      - DynamicFramework
+    templateAttributes:
+      frameworkPath: libraries/core/DependencyInjector
+  DependencyInjectorTests:
+    templates:
+      - FrameworkTests
+    dependencies:
+     - target: DependencyInjector
+    templateAttributes:
+      frameworkPath: libraries/core/DependencyInjector
+
 ###############################
 # Shcemes
 ###############################
 schemes:
-  
+  DependencyInjector:
+      build:
+        targets:
+          DependencyInjector: [run, test]
+      run:
+        config: Debug
+      test:
+        config: Debug
+        gatherCoverageData: true
+        coverageTargets:
+          - DependencyInjector
+        targets:
+          - name: DependencyInjectorTests
+            randomExecutionOrder: true
+

@@ -12,7 +12,7 @@ platform :ios, '15.0'
 load './scripts/podfile/external_libs.rb'
 load './scripts/podfile/load_libs.rb'
 
-# LoadDefModule()
+CoreDependencyInjector()
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
