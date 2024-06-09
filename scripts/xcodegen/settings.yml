@@ -1,0 +1,19 @@
+settings:
+  MARKETING_VERSION: 1.0.0
+  SWIFT_VERSION: 5.9
+  VERSIONING_SYSTEM: apple-generic
+  CLANG_ENABLE_OBJC_WEAK: 'YES'
+  ARCHS: "$(ARCHS_STANDARD)"
+  CODE_SIGN_IDENTITY: ""
+
+options:
+  xcodeVersion: '15.4'
+  createIntermediateGroups: true
+  developmentLanguage: pt-BR
+  bundleIdPrefix: br.com.comitando
+  deploymentTarget:
+    iOS: 15.0
+
+configs:
+  Debug: debug
+  Release: release

@@ -1,0 +1,23 @@
+---
+name: ComitandoInvestments
+include:
+###############################
+# Settings
+###############################
+- path: "./scripts/xcodegen/settings.yml"
+
+###############################
+# TargetTemplates
+###############################
+- path: "./scripts/xcodegen/targetTemplates.yml"
+
+###############################
+# Targets
+###############################
+targets:
+  
+###############################
+# Shcemes
+###############################
+schemes:
+  
