@@ -27,6 +27,26 @@ targets:
      - target: DependencyInjector
     templateAttributes:
       frameworkPath: libraries/core/DependencyInjector
+  NetworkClient:
+    templates:
+      - StaticFramework
+    dependencies:
+     - target: DependencyInjector
+     - target: NetworkClientInterface
+    templateAttributes:
+      frameworkPath: libraries/core/NetworkClient
+  NetworkClientTests:
+    templates:
+      - FrameworkTests
+    dependencies:
+     - target: NetworkClient
+    templateAttributes:
+      frameworkPath: libraries/core/NetworkClient
+  NetworkClientInterface:
+    templates:
+      - StaticFramework
+    templateAttributes:
+      frameworkPath: libraries/core/NetworkClient
 
 ###############################
 # Shcemes
@@ -46,4 +66,24 @@ schemes:
         targets:
           - name: DependencyInjectorTests
             randomExecutionOrder: true
+  NetworkClient:
+      build:
+        targets:
+          NetworkClient: [run, test]
+      run:
+        config: Debug
+      test:
+        config: Debug
+        gatherCoverageData: true
+        coverageTargets:
+          - NetworkClient
+        targets:
+          - name: NetworkClientTests
+            randomExecutionOrder: true
+  NetworkClientInterface:
+      build:
+        targets:
+          NetworkClientInterface: [run]
+      run:
+        config: Debug
 
