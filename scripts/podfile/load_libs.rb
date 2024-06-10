@@ -9,16 +9,16 @@ def CoreDependencyInjector
     end
 end
 
-def CoreNetworkClient
-    target 'NetworkClient' do
+def CoreNetworkManager
+    target 'NetworkManager' do
         # Libs bundled outside
         
-        target 'NetworkClientTests' do
+        target 'NetworkManagerTests' do
             
         end
     end
 
-    target 'NetworkClientInterface' do
+    target 'NetworkManagerInterface' do
         # Libs bundled outside
         
     end
