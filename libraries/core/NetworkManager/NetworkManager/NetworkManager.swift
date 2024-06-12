@@ -53,14 +53,12 @@ extension NetworkManager: NetworkManagerInterface {
         return fetchData(endpoint: endpoint) { result in
             switch result {
             case .success(let data):
-                
                 do {
                     let decodedData = try endpoint.decoder.decode(T.self, from: data)
                     completion(.success(decodedData))
                 } catch let decodingError {
                     completion(.failure(.decodingError(decodingError)))
                 }
-                
             case .failure(let error):
                 completion(.failure(error))
             }
