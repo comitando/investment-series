@@ -10,6 +10,7 @@ Este projeto tem como objetivo construir um aplicativo de investimentos do zero.
 - [Domain-Driven Design (DDD)](#domain-driven-design-ddd)
 - [Framework Core Mobile](#framework-core-mobile)
   - [Injeção de Dependência (DI)](#injeção-de-dependência-di)
+  - [Rede](#rede)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Instalação](#instalação)
 - [Uso](#uso)
@@ -47,6 +48,13 @@ Injeção de Dependência é um padrão de design usado para implementar IoC (In
 
 - [Guia completo (DI)](docs/di/README.md/)
 
+### Rede
+
+O módulo de rede lidará com todas as solicitações HTTP, chamadas de API e operações relacionadas à rede.
+
+- [Guia completo (NetworkManager)](docs/network/README.md/)
+
+
 ## Estrutura do Projeto
 
 ```
@@ -59,6 +67,7 @@ investment-series/
 │
 ├── libraries/Core/         # Módulos core
 │   ├── DI/
+│   ├── Network/
 │
 └── project.yml
 └── Podfile
