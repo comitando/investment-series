@@ -8,3 +8,19 @@ def CoreDependencyInjector
         end
     end
 end
+
+def CoreNetworkManager
+    target 'NetworkManager' do
+        # Libs bundled outside
+        
+        target 'NetworkManagerTests' do
+            
+        end
+    end
+
+    target 'NetworkManagerInterface' do
+        # Libs bundled outside
+        
+    end
+end
+

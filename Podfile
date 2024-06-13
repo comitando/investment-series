@@ -13,6 +13,7 @@ load './scripts/podfile/external_libs.rb'
 load './scripts/podfile/load_libs.rb'
 
 CoreDependencyInjector()
+CoreNetworkManager()
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
