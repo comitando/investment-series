@@ -1,0 +1,41 @@
+############
+# Targets
+############
+
+targets:
+
+  DependencyInjector:
+    
+    # templates
+    templates: 
+      - DynamicFramework
+    
+    # templateAttributes
+    templateAttributes: 
+      frameworkPath: libraries/core/DependencyInjector
+      
+    # scheme
+    scheme:
+      gatherCoverageData: true
+      coverageTargets:
+        - DependencyInjector
+      testTargets:
+        - name: DependencyInjectorTests
+          parallelizable: true
+          randomExecutionOrder: true
+
+  DependencyInjectorTests:
+    
+    # templates
+    templates: 
+      - FrameworkTests
+    
+    # templateAttributes
+    templateAttributes: 
+      frameworkPath: libraries/core/DependencyInjector
+
+    # dependencies
+    dependencies:
+      - target: DependencyInjector
+
+    

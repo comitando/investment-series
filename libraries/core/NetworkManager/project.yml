@@ -1,0 +1,53 @@
+############
+# Targets
+############
+
+targets:
+
+  NetworkManager:
+    
+    # templates
+    templates: 
+      - StaticFramework
+    
+    # templateAttributes
+    templateAttributes: 
+      frameworkPath: libraries/core/NetworkManager
+
+    dependencies:
+     - target: DependencyInjector
+     - target: NetworkManagerInterface
+      
+    # scheme
+    scheme:
+      gatherCoverageData: true
+      coverageTargets:
+        - NetworkManager
+      testTargets:
+        - name: NetworkManagerTests
+          parallelizable: true
+          randomExecutionOrder: true
+
+  NetworkManagerTests:
+    
+    # templates
+    templates: 
+      - FrameworkTests
+    
+    # templateAttributes
+    templateAttributes: 
+      frameworkPath: libraries/core/NetworkManager
+
+    # dependencies
+    dependencies:
+      - target: NetworkManager
+
+  NetworkManagerInterface:
+
+    # templates
+    templates:
+      - StaticFramework
+    
+    # templateAttributes
+    templateAttributes:
+      frameworkPath: libraries/core/NetworkManager

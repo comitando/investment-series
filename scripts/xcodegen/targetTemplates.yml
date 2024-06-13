@@ -3,18 +3,18 @@ targetTemplates:
     platform: iOS
     type: framework
     sources:
-    - path: "../../${frameworkPath}/${target_name}"
+    - path: "${frameworkPath}/${target_name}"
     info:
-      path: "../../${frameworkPath}/${target_name}/Info.plist"
+      path: "${frameworkPath}/${target_name}/Info.plist"
     settings:
       CODE_SIGN_IDENTITY: ""
   StaticFramework:
     platform: iOS
     type: framework
     sources:
-    - path: "../../${frameworkPath}/${target_name}"
+    - path: "${frameworkPath}/${target_name}"
     info:
-      path: "../../${frameworkPath}/${target_name}/Info.plist"
+      path: "${frameworkPath}/${target_name}/Info.plist"
     settings:
       CODE_SIGN_IDENTITY: ""
       MACH_O_TYPE: staticlib
@@ -22,9 +22,9 @@ targetTemplates:
     platform: iOS
     type: bundle.unit-test
     sources:
-    - path: "../../${frameworkPath}/${target_name}"
+    - path: "${frameworkPath}/${target_name}"
       excludes:
       - __Snapshots__
       - "**/__Snapshots__"
     info:
-      path: "../../${frameworkPath}/${target_name}/Info.plist"
+      path: "${frameworkPath}/${target_name}/Info.plist"
