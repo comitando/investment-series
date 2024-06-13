@@ -1,89 +1,22 @@
 ---
 name: ComitandoInvestments
 include:
-###############################
-# Settings
-###############################
-- path: "./scripts/xcodegen/settings.yml"
+  ###############################
+  # Settings
+  ###############################
+  - path: scripts/xcodegen/settings.yml
+    relativePaths: false
 
-###############################
-# TargetTemplates
-###############################
-- path: "./scripts/xcodegen/targetTemplates.yml"
+  ###############################
+  # TargetTemplates
+  ###############################
+  - path: scripts/xcodegen/targetTemplates.yml
+    relativePaths: false
 
-###############################
-# Targets
-###############################
-targets:
-  DependencyInjector:
-    templates:
-      - DynamicFramework
-    templateAttributes:
-      frameworkPath: libraries/core/DependencyInjector
-  DependencyInjectorTests:
-    templates:
-      - FrameworkTests
-    dependencies:
-     - target: DependencyInjector
-    templateAttributes:
-      frameworkPath: libraries/core/DependencyInjector
-  NetworkManager:
-    templates:
-      - StaticFramework
-    dependencies:
-     - target: DependencyInjector
-     - target: NetworkManagerInterface
-    templateAttributes:
-      frameworkPath: libraries/core/NetworkManager
-  NetworkManagerTests:
-    templates:
-      - FrameworkTests
-    dependencies:
-     - target: NetworkManager
-    templateAttributes:
-      frameworkPath: libraries/core/NetworkManager
-  NetworkManagerInterface:
-    templates:
-      - StaticFramework
-    templateAttributes:
-      frameworkPath: libraries/core/NetworkManager
-
-###############################
-# Shcemes
-###############################
-schemes:
-  DependencyInjector:
-      build:
-        targets:
-          DependencyInjector: [run, test]
-      run:
-        config: Debug
-      test:
-        config: Debug
-        gatherCoverageData: true
-        coverageTargets:
-          - DependencyInjector
-        targets:
-          - name: DependencyInjectorTests
-            randomExecutionOrder: true
-  NetworkManager:
-      build:
-        targets:
-          NetworkManager: [run, test]
-      run:
-        config: Debug
-      test:
-        config: Debug
-        gatherCoverageData: true
-        coverageTargets:
-          - NetworkManager
-        targets:
-          - name: NetworkManagerTests
-            randomExecutionOrder: true
-  NetworkManagerInterface:
-      build:
-        targets:
-          NetworkManagerInterface: [run]
-      run:
-        config: Debug
-
+  # ###############################
+  # Core Targets
+  # ###############################
+  - path: libraries/core/DependencyInjector/project.yml
+    relativePaths: false
+  - path: libraries/core/NetworkManager/project.yml
+    relativePaths: false
