@@ -74,6 +74,32 @@ investment-series/
 └── tools.sh
 ```
 
+### Configuração do Projeto com Xcodegen
+
+Este projeto utiliza o `xcodegen` para gerar o arquivo `.xcodeproj` de forma dinâmica, organizando e modularizando a estrutura do projeto. Abaixo estão descritas as principais configurações e diretórios envolvidos na geração do projeto.
+
+#### Arquivos de Configuração
+
+- **Settings**:
+  - Localização: `scripts/xcodegen/settings.yml`
+  - Descrição: Este arquivo contém as configurações gerais do projeto, centralizando parâmetros importantes que serão utilizados na geração do `.xcodeproj`.
+
+- **Templates de Targets**:
+  - Localização: `scripts/xcodegen/targetTemplates.yml`
+  - Descrição: Define templates reutilizáveis para os targets do projeto, facilitando a manutenção e a padronização das configurações de cada target.
+
+- **Targets**:
+  - Localização: `libraries/**/project.yml`
+  - Descrição: Contém as configurações específicas para cada módulo, separado de acordo com a sua sessão.
+
+#### Benefícios
+
+- **Modularização**: Separação clara das configurações e templates, facilitando a manutenção e a escalabilidade.
+- **Automação**: A geração automática do arquivo `.xcodeproj` reduz a possibilidade de erros manuais e garante consistência nas configurações.
+- **Facilidade de Configuração**: Centraliza as configurações do projeto em arquivos YAML de fácil leitura e edição.
+
+Para mais informações sobre como utilizar e configurar o `xcodegen`, consulte a [documentação oficial do Xcodegen](https://github.com/yonaskolb/XcodeGen).
+
 ## Instalação
 
 1. **Clone o repositório:**
